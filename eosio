@@ -1,0 +1,24 @@
+echo '{
+  "expiration": "2022-07-06T00:59:00.000",
+  "ref_block_num": 5436,
+  "ref_block_prefix": 1236047736,
+  "max_net_usage_words": 0,
+  "max_cpu_usage_ms": 0,
+  "delay_sec": 0,
+  "context_free_actions": [],
+  "actions": [
+    {
+      "account": "eosio.token",
+      "name": "transfer",
+      "authorization": [
+        {
+          "actor": "eosio",
+          "permission": "owner"
+        }
+      ],
+      "data": "0000000000EA30550000CF0B4C57DD8500350C000000000004454F530000000000"
+    }
+  ],
+  "transaction_extensions": []
+}' > eosc-tx.json;
+eosc -u https://eos.greymass.com tx sign eosc-tx.json;
